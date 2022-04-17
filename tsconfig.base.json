@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@remix-fast-ui/fast-ui-components": [
+        "libs/fast-ui-components/src/index.ts"
+      ],
+      "@remix-fast-ui/util-formatters": ["libs/util-formatters/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

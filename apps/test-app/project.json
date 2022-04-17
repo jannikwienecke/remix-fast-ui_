@@ -1,0 +1,88 @@
+{
+  "root": "apps/test-app",
+  "sourceRoot": "apps/test-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/test-app",
+        "index": "apps/test-app/src/index.html",
+        "baseHref": "/",
+        "main": "apps/test-app/src/main.tsx",
+        "polyfills": "apps/test-app/src/polyfills.ts",
+        "tsConfig": "apps/test-app/tsconfig.app.json",
+        "assets": ["apps/test-app/src/favicon.ico", "apps/test-app/src/assets"],
+        "styles": ["apps/test-app/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/test-app/src/environments/environment.ts",
+              "with": "apps/test-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "test-app:build",
+        "hmr": true,
+        "port": 3001,
+        "proxyConfig": "apps/test-app/proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "test-app:build:production",
+          "hmr": false
+        }
+      }
+    },
+
+    "serveAppAndApi":{
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "nx serve test-app"
+          },
+          {
+            "command": "nx serve api"
+          }
+        ]
+      }
+    },
+
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/test-app/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/test-app"],
+      "options": {
+        "jestConfig": "apps/test-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
