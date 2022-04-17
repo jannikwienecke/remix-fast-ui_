@@ -8,11 +8,14 @@ import { utilFormatters } from "@remix-fast-ui/util-formatters";
 import React from "react";
 
 export function App() {
-  // React.useEffect(() => {
-  //   fetch("./api")
-  //     .then((res) => res.json())
-  //     .then((res) => console.log(res));
-  // }, []);
+  const [test, setTest] = React.useState(false);
+  React.useEffect(() => {
+    console.log(test);
+
+    fetch("./api")
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }, []);
 
   return (
     <>

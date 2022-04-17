@@ -5,7 +5,21 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./app";
 
 describe("App", () => {
+  beforeAll(() => {
+    global["fetch"] = jest.fn().mockResolvedValueOnce({
+      json: () => ({
+        message: "my message",
+      }),
+    });
+  });
+
   it("should render successfully", () => {
+    global["fetch"] = jest.fn().mockResolvedValueOnce({
+      json: () => ({
+        message: "my message",
+      }),
+    });
+
     const { baseElement } = render(
       <BrowserRouter>
         <App />
@@ -16,11 +30,11 @@ describe("App", () => {
   });
 
   it("should have a test as the title", () => {
-    // global["fetch"] = jest.fn().mockResolvedValueOnce({
-    //   json: () => ({
-    //     message: "my message",
-    //   }),
-    // });
+    global["fetch"] = jest.fn().mockResolvedValueOnce({
+      json: () => ({
+        message: "my message",
+      }),
+    });
 
     const { getByText } = render(
       <BrowserRouter>
