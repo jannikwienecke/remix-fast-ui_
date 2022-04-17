@@ -1,10 +1,10 @@
 module.exports = {
-  displayName: 'my-remix',
-  preset: '../../jest.preset.js',
+  displayName: "my-remix",
+  preset: "../../jest.preset.js",
   globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
+    "ts-jest": {
+      tsconfig: "<rootDir>/tsconfig.spec.json",
     },
   },
-  coverageDirectory: '../../coverage/packages/my-remix',
+  coverageDirectory: "../../coverage/packages/my-remix",
 };
