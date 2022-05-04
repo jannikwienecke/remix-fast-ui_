@@ -41,6 +41,7 @@ export default function Task({
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a onClick={() => onPinTask(id)}>
             <span
+              style={{ background: "red" }}
               className={`icon-star`}
               id={`pinTask-${id}`}
               aria-label={`pinTask-${id}`}

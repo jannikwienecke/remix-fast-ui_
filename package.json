@@ -6,7 +6,9 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "postinstall": "husky install && remix setup node"
+    "postinstall": "husky install && remix setup node",
+    "build-storybook": "yarn nx run fast-ui-components:build-storybook",
+    "chromatic": "npx chromatic --project-token=c0483e51dc8e"
   },
   "private": true,
   "dependencies": {
@@ -64,6 +66,7 @@
     "@typescript-eslint/parser": "~5.18.0",
     "babel-jest": "27.2.3",
     "babel-loader": "8.1.0",
+    "chromatic": "^6.5.4",
     "cypress": "^9.1.0",
     "eslint": "~8.12.0",
     "eslint-config-prettier": "8.1.0",
