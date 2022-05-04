@@ -15,9 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@remix-fast-ui/fast-ui": ["libs/fast-ui/src/index.ts"],
+      "@remix-fast-ui/fast-ui-base": ["libs/fast-ui-base/src/index.ts"],
       "@remix-fast-ui/fast-ui-components": [
         "libs/fast-ui-components/src/index.ts"
       ],
+      "@remix-fast-ui/logic": ["libs/logic/src/index.ts"],
+      "@remix-fast-ui/test": ["libs/test/src/index.ts"],
       "@remix-fast-ui/util-formatters": ["libs/util-formatters/src/index.ts"]
     }
   },

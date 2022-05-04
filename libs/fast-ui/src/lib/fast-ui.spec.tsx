@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
 
-import Header from "./header";
+import FastUi from "./fast-ui";
 
-describe("Header", () => {
+describe("FastUi", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Header title="HELLO WORLD" />);
+    const { baseElement } = render(<FastUi />);
     expect(baseElement).toBeTruthy();
   });
 });

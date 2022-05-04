@@ -1,0 +1,56 @@
+{
+  "root": "libs/fast-ui",
+  "sourceRoot": "libs/fast-ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "libs/fast-ui/dist",
+        "tsConfig": "libs/fast-ui/tsconfig.lib.json",
+        "project": "libs/fast-ui/package.json",
+        "entryFile": "libs/fast-ui/src/index.ts",
+        "external": [
+          "react/jsx-runtime"
+        ],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/fast-ui/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "format": [
+          "cjs"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/fast-ui/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/fast-ui"
+      ],
+      "options": {
+        "jestConfig": "libs/fast-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

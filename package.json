@@ -6,10 +6,12 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "postinstall": "husky install"
+    "postinstall": "husky install && remix setup node"
   },
   "private": true,
   "dependencies": {
+    "@remix-run/react": "^1.0.6",
+    "@remix-run/serve": "^1.0.6",
     "autoprefixer": "^10.4.4",
     "core-js": "^3.6.5",
     "express": "4.17.2",
@@ -19,6 +21,7 @@
     "react-dom": "18.0.0",
     "react-router-dom": "5.3.0",
     "regenerator-runtime": "0.13.7",
+    "remix": "^1.0.6",
     "tailwindcss": "^3.0.24",
     "tslib": "^2.0.0",
     "xstate": "^4.31.0"
@@ -35,15 +38,19 @@
     "@nrwl/node": "13.10.2",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/react": "13.10.2",
+    "@nrwl/remix": "^13.7.1",
     "@nrwl/storybook": "^13.10.2",
     "@nrwl/web": "13.10.2",
     "@nrwl/workspace": "13.10.2",
+    "@remix-run/dev": "^1.0.6",
     "@storybook/addon-essentials": "~6.4.12",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/builder-webpack5": "~6.4.12",
     "@storybook/core-server": "~6.4.12",
     "@storybook/manager-webpack5": "~6.4.12",
     "@storybook/react": "~6.4.12",
+    "@storybook/testing-library": "^0.0.11",
+    "@storybook/testing-react": "^1.2.4",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/react": "13.0.0",
     "@testing-library/react-hooks": "7.0.2",
@@ -68,7 +75,6 @@
     "husky": "^7.0.4",
     "jest": "27.2.3",
     "lint-staged": "^12.3.8",
-    "nx": "13.10.2",
     "prettier": "^2.5.1",
     "react-test-renderer": "18.0.0",
     "ts-jest": "27.0.5",
@@ -80,11 +86,13 @@
       "pre-commit": "lint-staged"
     }
   },
-  
   "lint-staged": {
     "*.{js,json,css,scss,md,ts,html,graphql}": [
       "eslint",
       "yarn format --uncommitted"
     ]
-  }
+  },
+  "workspaces": [
+    "libs/*"
+  ]
 }

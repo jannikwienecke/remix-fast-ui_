@@ -1,9 +1,0 @@
-describe("fast-ui-components: Header component", () => {
-  beforeEach(() =>
-    cy.visit(`/iframe.html?id=header--primary&args=title=Hello World;`)
-  );
-
-  it("should render the component", () => {
-    cy.get("h1").should("contain", "Hello World");
-  });
-});

@@ -2,4 +2,4 @@
 . "$(dirname "$0")/_/husky.sh"
 
 nx affected:test --base=main               
-nx affected:lint --base=main               
+nx affected:lint --base=main --verbose

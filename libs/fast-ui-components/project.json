@@ -4,6 +4,27 @@
   "projectType": "library",
   "tags": [],
   "targets": {
+        "build": {
+          "executor": "@nrwl/web:rollup",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "libs/fast-ui-components/dist",
+            "tsConfig": "libs/fast-ui-components/tsconfig.lib.json",
+            "project": "libs/fast-ui-components/package.json",
+            "entryFile": "libs/fast-ui-components/src/index.ts",
+            "external": ["react/jsx-runtime"],
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "compiler": "babel",
+            "assets": [
+              {
+                "glob": "libs/test/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ],
+            "format": ["cjs"]
+          }
+        },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
