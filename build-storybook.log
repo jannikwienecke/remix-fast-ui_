@@ -1,7 +1,7 @@
 yarn run v1.22.17
-$ /Users/sirum/code/remix-fast-ui/node_modules/.bin/nx run fast-ui-components:build-storybook --output-dir /var/folders/cq/tfd10t394w96vzvkzxnlf5xr0000gn/T/chromatic--12641-0aFLkOsAYvGw
+$ /Users/sirum/code/remix-fast-ui/node_modules/.bin/nx run fast-ui-components:build-storybook --output-dir /var/folders/cq/tfd10t394w96vzvkzxnlf5xr0000gn/T/chromatic--13508-47s0ChQFd01I
 
-> nx run fast-ui-components:build-storybook --outputDir=/var/folders/cq/tfd10t394w96vzvkzxnlf5xr0000gn/T/chromatic--12641-0aFLkOsAYvGw
+> nx run fast-ui-components:build-storybook --outputDir=/var/folders/cq/tfd10t394w96vzvkzxnlf5xr0000gn/T/chromatic--13508-47s0ChQFd01I
 
 
 >  NX  ui framework: @storybook/react
@@ -15,8 +15,8 @@ info => Compiling manager..
 info => Compiling preview..
 info => Loading Nrwl React Storybook preset from "@nrwl/react/plugins/storybook"
 info => Using default Webpack5 setup
-info => Manager built (16 s)
-info => Preview built (18 s)
+info => Manager built (17 s)
+info => Preview built (19 s)
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
 WARN Assets: 
@@ -27,7 +27,7 @@ WARN Entrypoints:
 WARN   main (1.69 MiB)
 WARN       runtime~main.e5784c80.iframe.bundle.js
 WARN       339.64caddb6.iframe.bundle.js
-WARN       main.11fe919f.iframe.bundle.js
+WARN       main.63768c64.iframe.bundle.js
 WARN 
 info => Output directory: /Users/sirum/code/remix-fast-ui/dist/storybook/fast-ui-components
 
@@ -42,6 +42,6 @@ info => Output directory: /Users/sirum/code/remix-fast-ui/dist/storybook/fast-ui
  >  NX   Successfully ran target build-storybook for project fast-ui-components
 
 
-   See Nx Cloud run details at https://nx.app/runs/bw5yCzw1T1n
+   See Nx Cloud run details at https://nx.app/runs/vKHKOwlL71g
 
-Done in 23.91s.
+Done in 23.71s.
